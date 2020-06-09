@@ -1,30 +1,27 @@
 <template>
-  <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
-  </div>
-</template>
+    
+    <div>
+      <!-- <div>Hello World </div> -->
+      <my-additon></my-additon>
+       <my-subtraction></my-subtraction>
+    </div>
 
+</template>
 <script>
-import { mapGetters } from 'vuex'
+// 引入组件
+import additon from '../../components/demo/addition.vue';
+import subtraction from '../../components/demo/subtraction.vue';
+
 
 export default {
-  name: 'Dashboard',
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
-  }
+    data() {
+        return{};
+    },
+    // 注册组件
+    components:{
+        "my-subtraction":subtraction,
+        "my-additon":additon
+    }
+
 }
 </script>
-
-<style lang="scss" scoped>
-.dashboard {
-  &-container {
-    margin: 30px;
-  }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-  }
-}
-</style>
